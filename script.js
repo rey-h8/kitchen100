@@ -188,7 +188,7 @@ function renderMenu(filteredMenu, type, filter) {
         // Menu price
         let price = createElement('p', {
             classes: ['menu-price'],
-            text: Math.floor((item.pricePerServing / 100) * 100) / 100,
+            text: `$ ${Math.floor((item.pricePerServing / 100) * 100) / 100}`,
         })
 
         scorePriceWrapper.append(scoreWrapper, price)
@@ -259,6 +259,8 @@ function updateOrder(id, type) {
         if (!document.querySelector(`#order-list-item-${id}`)) {
             addOrder(id, orders[id])
         }
+
+        document.querySelector('.button-checkout').disabled = false
     } else {
         if (orders[id] <= 1) {
             let removeLi = document.querySelector(`#order-list-item-${id}`)
@@ -271,6 +273,9 @@ function updateOrder(id, type) {
                 document.querySelector(`.button-add-order-${id}`).textContent =
                     'Add  +'
             }
+
+            // button checkout -> disabled
+            document.querySelector('.button-checkout').disabled = true
 
             delete orders[id]
         } else {
@@ -455,7 +460,7 @@ function showCheckoutModal() {
     let p = createElement('p', {
         classes: ['checkout-text'],
         html:
-            "Our web developer is still developing the Checkout Page...<br>You can have all of your orders <span>for free</span>! Have a nice day!<br>Assalamu'alaikum.",
+            "Our web developers are still developing the Checkout Page...<br>You can have all of your orders <span>for free</span>! Have a nice day!<br>Assalamu'alaikum.",
     })
 
     let div = createElement('div', { classes: ['modal-ceo'] })
@@ -483,4 +488,8 @@ window.addEventListener('click', function (event) {
     if (event.target === modal) {
         toggleModal()
     }
+})
+
+document.querySelector('.close').addEventListener('click', function () {
+    toggleModal()
 })
