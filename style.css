@@ -1,0 +1,680 @@
+:root {
+    --accent: hsl(25, 90%, 52%);
+    --accent2: rgb(250, 131, 46);
+    --txt-color: rgb(45, 66, 88);
+    --txt-color2: rgb(223, 220, 218);
+    --placeholder-color: rgb(170, 169, 169);
+
+    --white2: rgb(240, 242, 247);
+    --white3: rgb(247, 249, 251);
+    --red2: #eca797;
+    --red3: rgb(243, 107, 107);
+    --yellow: rgb(175, 163, 53);
+    --yellow2: rgb(207, 193, 61);
+    --yellow3: rgb(226, 211, 78);
+    --yellow4: rgb(235, 222, 107);
+    --yellow5: rgb(235, 225, 139);
+    --purple3: rgb(223, 134, 223);
+    --blue: #547ddb;
+    --blue2: #305dc5;
+    --blue3: #98aedf;
+    --cyan: rgb(62, 190, 184);
+    --cyan2: rgb(86, 216, 209);
+    --cyan3: rgb(127, 226, 221);
+    --green0: rgb(14, 129, 62);
+    --green: rgb(22, 175, 86);
+    --green2: rgb(49, 190, 108);
+    --green3: rgb(79, 219, 138);
+    --green4: rgb(114, 230, 162);
+    --green5: rgb(141, 233, 179);
+    --green6: rgb(164, 240, 196);
+    --orange0: hsl(25, 80%, 28%);
+    --orange: hsl(25, 74%, 47%);
+    --orange2: hsl(25, 90%, 52%);
+    --orange3: rgb(250, 131, 46);
+
+    --grey: rgb(148, 157, 160);
+    --grey2: rgb(164, 180, 185);
+    --grey3: rgb(183, 202, 207);
+    --grey4: rgb(205, 222, 226);
+    --darkgrey: rgb(28, 43, 59);
+
+    --sans: 'Inter';
+    --serif: 'Merriweather';
+
+    --main-padding: 15px;
+    --header-height: 64px;
+    --sidebar-width: 300px;
+}
+
+/*
+ * ─── CSS RESET: START ───────────────────────────────────────────────────────────
+ */
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+*:focus {
+    /* outline: 1px solid var(--accent);
+    outline-offset: 2px; */
+    outline: none;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 16px;
+    color: var(--txt-color);
+    scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+    font-weight: normal;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    /* color: var(--blue); */
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: var(--placeholder-color);
+}
+
+button {
+    cursor: pointer;
+}
+
+/*
+ * ─── CSS RESET: END ─────────────────────────────────────────────────────────────
+ */
+
+/*
+ * ─── MAIN LAYOUT ────────────────────────────────────────────────────────────────
+ */
+
+* {
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#main-aside {
+    display: flex;
+    flex-direction: row;
+}
+
+aside {
+    width: var(--sidebar-width);
+    height: 100vh;
+    background: var(--white2);
+    position: fixed;
+    top: 0;
+    right: 0;
+    padding: 2rem 0.5rem 2rem 1rem;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    box-shadow: 0 0 6px 6px rgba(0, 0, 0, 0.1);
+}
+
+#container {
+    flex: 1;
+    height: 100vh;
+}
+
+header {
+    flex: 1;
+    height: var(--header-height);
+    padding: 1rem;
+}
+
+main {
+    width: calc(100vw - var(--sidebar-width));
+    /* background-color: var(--white2); */
+}
+
+/*
+ * ─── HEADER ─────────────────────────────────────────────────────────────────────
+ */
+
+#logo {
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--green);
+}
+#logo span {
+    font-size: 1.3rem;
+    font-weight: 900;
+    color: var(--orange);
+}
+
+/*
+ * ─── HERO ───────────────────────────────────────────────────────────────────────
+ */
+#hero {
+    min-height: 100vh;
+    padding: 0 1rem 1rem;
+}
+
+#hero::before {
+    background-image: url('./img/pexels-ella-olsson-1640777.jpg');
+    background-size: cover;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.4;
+}
+
+#hero::after {
+    background-color: #149625;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    opacity: 0.4;
+}
+#hero h2 {
+    padding: 15vh 0 0 0;
+    margin: 0 0 10vh 0;
+    font-size: 3rem;
+    font-weight: 500;
+    z-index: 3;
+    color: rgb(15, 26, 15);
+}
+
+#hero h2 span {
+    font-weight: 700;
+}
+
+#hero h2 span.junk {
+    font-weight: 300;
+    text-decoration: line-through;
+}
+
+#hero h4 {
+    font-size: 1.4rem;
+    line-height: 2em;
+    font-weight: 600;
+    color: rgb(15, 26, 15);
+}
+
+#hero h4 span {
+    font-weight: 600;
+    color: var(--accent);
+}
+#hero h4 span.kitchen {
+    font-weight: 600;
+    color: var(--green);
+    background: white;
+    border-bottom: 3px solid var(--accent);
+}
+#hero h4 span.hundred {
+    font-weight: 800;
+    color: var(--accent);
+    background: white;
+    border-bottom: 3px solid var(--accent);
+}
+
+.button.button-cta {
+    margin-top: 12vh;
+    background-color: var(--accent);
+    font-size: 1.25rem;
+    font-weight: 500;
+    padding: 1rem 2rem;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 25px;
+}
+
+/*
+ * ─── FILTERS ────────────────────────────────────────────────────────────────────
+ */
+
+#filters {
+    padding: 0 1rem;
+    background: var(--white2);
+}
+
+#filters h2 {
+    padding-top: 2rem;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+#filters h3 {
+    margin: 2rem 0 1rem 0;
+    font-weight: 600;
+    font-size: 1.5rem;
+    /* color: var(--white3) */
+}
+
+#cuisines {
+    padding-bottom: 2rem;
+}
+
+#categories ul,
+#cuisines ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#filters ul li {
+    margin: 0.5rem;
+}
+
+.button {
+    border: 0;
+    padding: 0.4rem 1rem;
+    color: white;
+}
+
+.button-cuisine {
+    background-color: var(--blue);
+}
+.button-cuisine:hover {
+    background-color: var(--blue2);
+}
+.button-dishtype {
+    background-color: var(--green2);
+}
+.button-dishtype:hover {
+    background-color: var(--green);
+}
+
+/*
+ * ─── MENU LIST ──────────────────────────────────────────────────────────────────
+ */
+/* li.append(img, title, scorePriceWrapper, button) */
+
+#menu {
+    padding: 3rem 1rem;
+    background-color: var(--white2);
+}
+
+#filter-info {
+    margin: 0 0 2rem 0;
+}
+
+#filter-info span {
+    color: var(--accent);
+    font-weight: 600;
+}
+#menu-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+#menu-list li {
+    margin: 1rem;
+    width: 220px;
+}
+
+.card {
+    transition: all 0.4s;
+}
+
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 2px 4px 6px 2px rgba(0, 0, 0, 0.35);
+}
+
+.menu-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 2px 4px 4px 0 rgba(0, 0, 0, 0.35);
+    margin-bottom: 5px;
+}
+
+.menu-image-wrapper {
+    width: 100%;
+    max-height: 150px;
+    overflow: hidden;
+}
+
+.menu-image {
+    object-fit: cover;
+}
+
+.menu-details {
+    height: 85px;
+    padding: 0 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.menu-title {
+    font-family: var(--serif);
+    font-weight: 700;
+    margin: 0.4rem 0 0.4rem 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    -moz-box-orient: vertical;
+}
+
+.score-price-wrapper {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 1rem;
+    justify-content: space-between;
+}
+
+.score-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+}
+
+.menu-star {
+    height: 18px;
+    width: 18px;
+    margin-right: 10px;
+}
+
+.menu-score {
+    font-size: 0.85rem;
+    font-weight: 500;
+}
+
+.menu-price {
+    font-weight: 600;
+}
+
+.menu-button {
+    float: right;
+    background-color: var(--accent);
+    color: white;
+    padding: 0.3rem 1rem;
+    border: 0;
+    border-radius: 5px;
+}
+
+.menu-button:disabled {
+    background-color: var(--grey);
+    color: var(--grey4);
+    cursor: unset;
+}
+
+/*
+ * ─── ORDERS ─────────────────────────────────────────────────────────────────────
+ */
+
+#hamburger-menu {
+    height: 24px;
+    width: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+
+.hamburger-line {
+    height: 4px;
+    width: 100%;
+    background-color: var(--txt-color);
+}
+
+.hamburger-line:nth-child(2) {
+    width: 75%;
+}
+.hamburger-line:nth-child(3) {
+    width: 50%;
+}
+
+aside h2 {
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
+.order-list-item {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid lightgray;
+    padding: 10px 0;
+}
+
+.image-title {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 5px;
+}
+
+.order-image-wrapper {
+    height: 100%;
+    max-width: 64px;
+    overflow: hidden;
+    margin-right: 5px;
+}
+.image-title p {
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.order-image {
+    object-fit: cover;
+    margin-right: 5px;
+}
+
+.price-qtt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.price-qtt p {
+    font-weight: 700;
+}
+
+#quantity-wrapper {
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.35);
+}
+
+#quantity-wrapper button {
+    border: 0;
+    background: white;
+    font-weight: 700;
+    padding: 2px 10px;
+}
+
+.button-minus,
+.button-plus {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.button-quantity {
+    cursor: unset;
+    font-size: 1rem;
+    color: var(--txt-color);
+}
+
+#total-price-wrapper {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    margin: 1.5rem 0 1rem 0;
+}
+
+#total-price-text {
+    font-weight: 600;
+}
+
+#total-price-value {
+    width: 100%;
+    text-align: right;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.button-checkout {
+    width: 100%;
+    border: 0;
+    margin: 10px 0;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 1rem;
+    font-weight: 700;
+    background-color: var(--accent);
+    color: white;
+    transition: transform 0.35s, box-shadow 0.35s;
+}
+
+.button-checkout::after {
+    content: '>';
+    position: relative;
+    left: 25%;
+}
+.button-checkout:hover {
+    background-color: rgb(255, 145, 0);
+    box-shadow: 1px 1px 4px 0 rgba(0, 0, 0, 0.35);
+    transform: translateY(-3px);
+}
+
+/*
+ * ─── FOOTER ─────────────────────────────────────────────────────────────────────
+ */
+
+footer {
+    background-color: var(--darkgrey);
+    width: 100%;
+    padding: 2rem 2rem 1rem;
+    color: var(--txt-color2);
+}
+
+#attributions h3 {
+    margin-bottom: 1rem;
+}
+#attributions li {
+    font-weight: 400;
+}
+
+#attributions a {
+    color: rgb(111, 154, 235);
+}
+
+/*
+ * ─── LAIN2 ──────────────────────────────────────────────────────────────────────
+ */
+
+#modal.hidden {
+    display: none;
+}
+
+#modal {
+    height: 100vh;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.8);
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    overflow: auto;
+}
+
+#modal-content {
+    border-radius: 10px;
+    background: var(--green6);
+    color: var(--txt-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 3rem 5rem;
+    line-height: 1.8rem;
+    z-index: 10;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.checkout-header {
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.checkout-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.checkout-text span {
+    font-weight: 700;
+}
+
+.ceo {
+    margin-left: 20vw;
+}
+
+.ceo-name {
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.ceo-title {
+    font-size: 0.8rem;
+    font-weight: 700;
+}

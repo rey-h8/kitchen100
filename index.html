@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Healthy Canteen</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="text/javascript" defer src="./database/200.min.js"></script>
+  <script type="text/javascript" defer src="./utils.js"></script>
+  <script type="text/javascript" defer src="./script.js"></script>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;900&family=Merriweather:wght@400;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <div id="container">
+    <!-- <header>
+      <h3 id="logo">kitchen<span>100</span></h3> 
+    </header> -->
+    <main id="content-container">
+      <div id="hero">
+        <h2>Goodbye <span class="junk">Junk Food</span>, Hello <span>Healthy Food</span></h2>
+        <h4 id="salutation"></h4>
+        <h4>Welcome to <span class="kitchen">KITCHEN</span><span class="hundred">100</span> where 100s of carefully
+          <br>selected <span>healthy</span> and <span>tasty</span> foods for you! </h4>
+        <a href="#filters">
+          <button type="button" class="button button-cta">I'm Hungry</button>
+        </a>
+      </div>
+
+      <div id="filters">
+        <h2>Menu Filters</h2>
+        <div id="categories">
+          <h3>Dish Types</h3>
+          <ul id="categories-list"></ul>
+        </div>
+        <div id="cuisines">
+          <h3>Cuisine Types</h3>
+          <ul id="cuisines-list"></ul>
+        </div>
+      </div>
+      <div id="menu">
+        <p id="filter-info"></p>
+        <ol id="menu-list"></ol>
+      </div>
+      <footer>
+        <div id="attributions">
+          <h3>ATTRIBUTIONS</h3>
+          <ul>
+            <li>
+              Food photos and details from <a href="https://spoonacular.com">Spoonacular</a>
+            </li>
+            <li>
+              Photo by Ella Olsson from <a
+                href="https://www.pexels.com/photo/flat-lay-photography-of-vegetable-salad-on-plate-1640777/">Pexels</a>
+            </li>
+            <li>Star icon from <a href="https://icons8.com">Icons8</a></li>
+          </ul>
+        </div>
+      </footer>
+    </main>
+  </div>
+  <aside id="pesanan">
+    <!-- <div id="hamburger-menu">
+      <div class="hamburger-line"></div>
+      <div class="hamburger-line"></div>
+      <div class="hamburger-line"></div>
+    </div> -->
+    <h2>My Orders</h2>
+    <ul id="order-list" class="open"></ul>
+    <div id="total-price-wrapper">
+      <p id="total-price-text">Total:</p>
+      <p id="total-price-value"></p>
+    </div>
+    <button class="button button-checkout" type="button">Checkout</button>
+  </aside>
+
+
+  <div id="modal" class="modal hidden">
+    <div id="modal-content" class="modal-content">
+      <span class="close">&times;</span>
+    </div>
+  </div>
+</body>
+
+</html>
