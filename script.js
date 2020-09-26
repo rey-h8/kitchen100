@@ -111,7 +111,6 @@ function filterMenu(type, filter) {
 document
     .querySelector('.button-checkout')
     .addEventListener('click', function () {
-        console.log('checkout')
         showCheckoutModal()
     })
 //
@@ -260,8 +259,10 @@ function updateOrder(id, type) {
             addOrder(id, orders[id])
         }
 
+        console.log('tambah')
         document.querySelector('.button-checkout').disabled = false
     } else {
+        console.log('minus')
         if (orders[id] <= 1) {
             let removeLi = document.querySelector(`#order-list-item-${id}`)
             removeLi.parentNode.removeChild(removeLi)
@@ -274,12 +275,17 @@ function updateOrder(id, type) {
                     'Add  +'
             }
 
-            // button checkout -> disabled
-            document.querySelector('.button-checkout').disabled = true
-
             delete orders[id]
+
+            console.log(orders)
+
+            if (isEmptyObject(orders)) {
+                // button checkout -> disabled
+                document.querySelector('.button-checkout').disabled = true
+            }
         } else {
             orders[id]--
+            console.log(orders)
         }
     }
 
@@ -493,3 +499,35 @@ window.addEventListener('click', function (event) {
 document.querySelector('.close').addEventListener('click', function () {
     toggleModal()
 })
+
+if (isEmptyObject(lget('orders'))) {
+    // button checkout -> disabled
+    document.querySelector('.button-checkout').disabled = true
+}
+
+window.addEventListener('resize', function () {
+    handleWindowResize()
+})
+
+handleWindowResize()
+
+function handleWindowResize() {
+    let hero = document.querySelector('#hero')
+    let heroW = hero.offsetWidth
+    let heroH = hero.offsetHeight
+
+    console.log({ heroW, heroH })
+
+    let heroBgImg = document.querySelector('#hero img')
+    let heroBgImgW = heroBgImg.offsetWidth
+    let heroBgImgH = heroBgImg.offsetHeight
+
+    console.log({ heroBgImgW, heroBgImgH })
+
+    heroBgImg.style.height = `${heroH}px`
+    heroBgImg.style.width = `${1.5 * heroBgImgH}px`
+}
+
+let heroBgImg = document.querySelector('#hero img')
+let heroBgImgW = heroBgImg.offsetWidth
+let heroBgImgH = heroBgImg.offsetHeight
